@@ -60,7 +60,18 @@ exports.cssLoaders = function (options) {
     postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
+<<<<<<< HEAD
+    scss: generateLoaders('sass').concat(
+        {
+            loader: 'sass-resources-loader',
+            options: {
+                resources: path.resolve(__dirname, '../src/style/_variables.scss')
+            }
+        }
+    ),
+=======
     scss: generateLoaders('sass'),
+>>>>>>> fe55020bdb0744024526f69eb8fd9825eccc12fe
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }

@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <div class="container">
         <div class="path">
             <ul>
@@ -10,14 +9,14 @@
                     </svg>
                 </li>
                 <li class="current">
-                    Add form
+                    Edit form
                 </li>
             </ul>
         </div>
         <div class="edit_form_wrap">
             <div class="row">
                 <div class="col1">
-                    <!--<img :src="item.img"/>-->
+                    <img :src="item.img"/>
                     <div class="imageActions">
                         <span>
                             <svg version="1.2" preserveAspectRatio="none" viewBox="0 0 24 24" style="opacity: 1; fill: rgb(0, 0, 0); width: 32px; height: 32px;">
@@ -39,19 +38,19 @@
                     <div class="form">
                         <div class="form_row">
                             <label for="title">Title</label>
-                            <input id="title" type="text"/>
+                            <input id="title" type="text" v-model="item.title"/>
                         </div>
                         <div class="form_row">
                             <label for="price">Price</label>
-                            <input id="price" type="text"/>
+                            <input id="price" type="text" v-model="item.price"/>
                         </div>
                         <div class="form_row">
                             <label for="overview">Overview</label>
-                            <textarea id="overview"></textarea>
+                            <textarea id="overview" v-model="item.desc"></textarea>
                         </div>
                         <div class="form_row_buttons">
-                            <button @click="add()" class="save_button">
-                                <span>Add</span>
+                            <button @click="save()" class="save_button">
+                                <span>Save</span>
                                 <svg version="1.2" preserveAspectRatio="none" viewBox="0 0 24 24" style="opacity: 1; fill: rgb(255, 255, 255); width: 24px; height: 24px;">
                                     <g>
                                         <path xmlns:default="http://www.w3.org/2000/svg" d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z" style="fill: rgb(255, 255, 255);"></path>
@@ -75,40 +74,24 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-export default {
-    name: 'AddForm',
-    computed: {
-        ...mapState({
-            item: 'addItem'
-        })
-    },
-    // methods: {
-    //     add: function () {
-    //         this.$store.dispatch('save', {item: this.item})
-    //             .then(() => {
-    //                 this.$router.push({name: 'AddsList'})
-    //             })
-    //     }
-    // },
-    // created () {
-    //     this.$store.dispatch('loadById', {id: this.$route.params.id})
-    // }
-}
-</script>
-=======
-  <div class="hello">
-    <h1>Add edit page</h1>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'AddForm',
-  data () {
-    return {
+    import { mapState } from 'vuex'
+    export default {
+        name: 'EditForm',
+        computed: {
+            ...mapState({
+                item: 'addItem'
+            })
+        },
+        methods: {
+            save: function () {
+                this.$store.dispatch('save', {item: this.item})
+                    .then(() => {
+                        this.$router.push({name: 'AddsList'})
+                    })
+            }
+        },
+        created () {
+            this.$store.dispatch('loadById', {id: this.$route.params.id})
+        }
     }
-  }
-}
 </script>
->>>>>>> fe55020bdb0744024526f69eb8fd9825eccc12fe

@@ -11,7 +11,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
+<<<<<<< HEAD
+const env = process.env.NODE_ENV === 'testing'
+  ? require('../config/test.env')
+  : require('../config/prod.env')
+=======
 const env = require('../config/prod.env')
+>>>>>>> fe55020bdb0744024526f69eb8fd9825eccc12fe
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -61,7 +67,13 @@ const webpackConfig = merge(baseWebpackConfig, {
     // you can customize output by editing /index.html
     // see https://github.com/ampedandwired/html-webpack-plugin
     new HtmlWebpackPlugin({
+<<<<<<< HEAD
+      filename: process.env.NODE_ENV === 'testing'
+        ? 'index.html'
+        : config.build.index,
+=======
       filename: config.build.index,
+>>>>>>> fe55020bdb0744024526f69eb8fd9825eccc12fe
       template: 'index.html',
       inject: true,
       minify: {

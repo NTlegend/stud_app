@@ -23,9 +23,13 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     app: './src/main.js',
+<<<<<<< HEAD
+      styles: ['./src/style/_variables.scss', './src/assets/scss/styles.scss']
+=======
     styles: [
         './src/assets/app.css',
     ]
+>>>>>>> fe55020bdb0744024526f69eb8fd9825eccc12fe
   },
   output: {
     path: config.build.assetsRoot,
