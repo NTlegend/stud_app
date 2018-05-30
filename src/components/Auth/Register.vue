@@ -90,6 +90,9 @@ export default {
   methods: {
     onSignUp () {
       if (this.$refs.form.validate()) {
+        this.$store.dispatch('signUp', {name: this.name, email: this.email, password: this.password}).then(() => {
+          this.$router.push('/login')
+        })
       }
     }
   }

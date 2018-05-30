@@ -58,6 +58,7 @@ export default {
   methods: {
     onSignIn () {
       if (this.$refs.form.validate()) {
+        this.$store.dispatch('signIn', {email: this.email, password: this.password})
       }
     }
   }
