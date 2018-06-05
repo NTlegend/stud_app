@@ -2,16 +2,19 @@
   <div class="hello">
     <h1>Login page</h1>
     <div>{{ login }}</div>
-    <div>
+    <div class="login-form">
         <div>
-            <input type="text" name="login" v-model="login">
+            <input type="text" name="login" v-model="login" placeholder="Email">
         </div>
         <div>
-            <input type="password" name="pass" v-model="pass">
+            <input type="password" name="pass" v-model="pass" placeholder="Password">
         </div>
         <div>
             <button @click="loginAction">Login</button>
         </div>
+        <a href="#" class="fb-login">
+            Log in with Facebook
+        </a>
     </div>
   </div>
 </template>
@@ -21,8 +24,8 @@ export default {
   name: 'Login',
   data () {
     return {
-      login: 'test',
-      pass: 'test'
+      login: '',
+      pass: ''
     }
   },
   methods: {

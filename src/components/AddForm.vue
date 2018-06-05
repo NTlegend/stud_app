@@ -1,12 +1,20 @@
 <template>
-  <div class="form">
-    <h1>Editing add page: </h1>
-    <h3>Add Id: {{ $route.params.id }}</h3>
-    <input v-model="item.name"/>
-    <br /><br />
-    <button @click="save()">Save</button>
-     &nbsp;&nbsp;
-    <router-link :to="{name: 'AddsList'}">Cancel</router-link>
+  <div class="form-wrapper">
+    <div class="form">
+      <div class="img-loader"></div>
+      <div class="input-wrapper">
+        Title
+        <input v-model="item.name"/>
+        Price
+        <input v-model="item.price"/>
+        Overview
+        <textarea v-model="item.description"/>
+        <div class="btn-wrapper">
+          <button @click="save()">Save</button>
+          <router-link :to="{name: 'AddsList'}" class="add-cancel">Cancel</router-link>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

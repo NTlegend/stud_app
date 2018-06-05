@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import AddsList from '@/components/AddsList'
 import Login from '@/components/Login'
+import Product from '@/components/Product'
 import Register from '@/components/Register'
 import SingleAdd from '@/components/SingleAdd'
 import AddForm from '@/components/AddForm'
@@ -15,6 +16,11 @@ export default new Router({
       path: '/',
       name: 'AddsList',
       component: AddsList
+    },
+    {
+      path: '/products/:id',
+      name: 'Product',
+      component: Product
     },
     {
       path: '/login',
